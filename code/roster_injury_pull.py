@@ -1,3 +1,21 @@
+import nba_api
+import pandas as pd
+import numpy as np
+import requests
+import time
+import datetime as dt
+from nba_api.stats.static import players
+import math
+from datetime import datetime, timedelta
+from nba_api.stats.library.parameters import SeasonAllNullable
+from tqdm import tqdm
+from scipy.stats import norm
+from nba_api.stats import endpoints
+from nba_api.stats.static import teams
+from nba_api.stats.library.parameters import SeasonType
+from nba_api.stats.library.parameters import SeasonTypePlayoffs
+from nba_api.stats.library.parameters import  SeasonNullable
+from itertools import compress
 import ELO_track
 
 def get_all_player_box(seasons = ['2009', '2010', '2011', '2012', '2013', '2014',

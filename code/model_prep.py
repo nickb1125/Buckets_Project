@@ -1,10 +1,25 @@
 ## by running this file, you also run all the neccecary other files to a full data pull and clean. This can take an hour or so. 
 ## Data organization in this step is aloso extreamly comuptationally intensive, and will take around 3 hours to run.
 ## Expect this script to take up to 4 or 5 hours to run.
+import nba_api
+import pandas as pd
+import numpy as np
+import requests
+import time
+import datetime as dt
+from nba_api.stats.static import players
+import math
+from datetime import datetime, timedelta
+from nba_api.stats.library.parameters import SeasonAllNullable
+from tqdm import tqdm
+from scipy.stats import norm
+from nba_api.stats import endpoints
+from nba_api.stats.static import teams
+from nba_api.stats.library.parameters import SeasonType
+from nba_api.stats.library.parameters import SeasonTypePlayoffs
+from nba_api.stats.library.parameters import  SeasonNullable
+from itertools import compress
 
-from numpy import NaN
-from ELO_track import ELO_track
-from games_pull import NBAgames, NBAgamesC
 import roster_injury_pull
 import shots_pull
 
